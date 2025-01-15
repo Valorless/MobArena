@@ -57,6 +57,7 @@ tasks {
         minimize()
 
         relocate("org.bstats", "com.garbagemule.MobArena.metrics")
+		relocate("net.kyori", "net.kyori")
 		
         dependencies {
             include(dependency("net.kyori:adventure-api"))
