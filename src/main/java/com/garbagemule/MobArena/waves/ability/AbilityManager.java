@@ -44,9 +44,11 @@ import java.util.Map;
 
 public class AbilityManager
 {
-    private static final String ma = "plugins" + File.separator + "MobArena.jar";
+	private static final String seperator = System.getProperty("path.separator");
+    private static final String ma = getPluginJar().getAbsolutePath();
     private static final String cb = System.getProperty("java.class.path");
-    private static final String classpath = ma + System.getProperty("path.separator") + cb;
+	private static final String bukkit = getBukkit().getAbsolutePath();
+    private static final String classpath = ma + seperator + cb + seperator + bukkit;
 
     private static Map<String,Class<? extends Ability>> abilities;
 
@@ -309,4 +311,43 @@ public class AbilityManager
         // Trim off the first ", ".
         return buffy.substring(2);
     }
+	
+	/**
+	* Retrieves the plugin's JAR file as a {@link File} object.
+	*
+	* @return A {@link File} object representing the plugin's JAR file, or {@code null} if an error occurs during URL-to-URI conversion.
+	*/
+	public static File getPluginJar() {
+		// Get the URL of the plugin's JAR file
+		URL url = MobArena.class.getProtectionDomain().getCodeSource().getLocation();
+		
+		// Convert URL to URI and extract the file path
+		try {
+			return new File(url.toURI());
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	/**
+	* Retrieves the Bukkit JAR file as a {@link File} object.
+	*
+	* @return A {@link File} object representing the Bukkit JAR file, or {@code null} if an error occurs during URL-to-URI conversion.
+	*/
+	public static File getBukkit() {
+		// Get the URL of the plugin's JAR file
+		URL url = Bukkit.class.getProtectionDomain().getCodeSource().getLocation();
+	
+		// Convert URL to URI and extract the file path
+		try {
+			return new File(url.toURI());
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 }
