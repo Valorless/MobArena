@@ -1,5 +1,6 @@
 package com.garbagemule.MobArena.waves.ability;
 
+import com.garbagemule.MobArena.MobArena;
 import com.garbagemule.MobArena.waves.ability.core.ChainLightning;
 import com.garbagemule.MobArena.waves.ability.core.DisorientAll;
 import com.garbagemule.MobArena.waves.ability.core.DisorientDistant;
@@ -36,6 +37,7 @@ import javax.tools.ToolProvider;
 import java.io.File;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
