@@ -60,6 +60,7 @@ tasks {
 		relocate("net.kyori", "net.kyori")
 		
         dependencies {
+            include(dependency("org.bstats:bstats-bukkit:2.2.1"))
             include(dependency("net.kyori:adventure-api"))
         }
 
