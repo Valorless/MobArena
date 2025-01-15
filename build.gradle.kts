@@ -16,9 +16,10 @@ repositories {
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7.1")
-	compileOnly("net.kyori:adventure-api:4.14.0")
     api("org.bstats:bstats-bukkit:2.2.1")
 	
+	implementation("net.kyori:adventure-api:4.14.0")
+
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.hamcrest:hamcrest-all:1.3")
     testImplementation("org.mockito:mockito-core:3.12.4")
