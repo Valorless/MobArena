@@ -59,7 +59,7 @@ tasks {
         relocate("org.bstats", "com.garbagemule.MobArena.metrics")
 		
         dependencies {
-            include(dependency('net.kyori:adventure-api'))
+            include(dependency("net.kyori:adventure-api"))
         }
 
         archiveBaseName = "MobArena"
