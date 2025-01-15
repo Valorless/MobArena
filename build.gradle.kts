@@ -18,7 +18,7 @@ dependencies {
     compileOnly("com.github.MilkBowl:VaultAPI:1.7.1")
     api("org.bstats:bstats-bukkit:2.2.1")
 	
-	implementation("net.kyori:adventure-api:4.14.0")
+	implementation("net.kyori:adventure-api:4.18.0")
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.hamcrest:hamcrest-all:1.3")
@@ -57,6 +57,10 @@ tasks {
         minimize()
 
         relocate("org.bstats", "com.garbagemule.MobArena.metrics")
+		
+        dependencies {
+            include(dependency('net.kyori:adventure-api'))
+        }
 
         archiveBaseName = "MobArena"
         archiveClassifier = ""
